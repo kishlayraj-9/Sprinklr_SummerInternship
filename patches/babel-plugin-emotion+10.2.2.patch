@@ -1,0 +1,13 @@
+diff --git a/node_modules/babel-plugin-emotion/dist/babel-plugin-emotion.cjs.prod.js b/node_modules/babel-plugin-emotion/dist/babel-plugin-emotion.cjs.prod.js
+index d7b202c..9e9a090 100644
+--- a/node_modules/babel-plugin-emotion/dist/babel-plugin-emotion.cjs.prod.js
++++ b/node_modules/babel-plugin-emotion/dist/babel-plugin-emotion.cjs.prod.js
+@@ -38,7 +38,7 @@ function multilineReplacer(match) {
+ var minify = function(code) {
+   var newCode = code.replace(multilineCommentRegex, multilineReplacer).split(linebreakRegex).filter((function(line) {
+     return line.length > 0 && !isLineComment(line);
+-  })).map(stripLineComment).join(" ");
++  })).map(stripLineComment).join(" ").replace(/ +/g," ");
+   return compressSymbols(newCode);
+ };
+ 

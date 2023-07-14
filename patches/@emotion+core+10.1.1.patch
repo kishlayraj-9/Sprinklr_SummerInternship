@@ -1,0 +1,19 @@
+diff --git a/node_modules/@emotion/core/macro.d.ts b/node_modules/@emotion/core/macro.d.ts
+new file mode 100644
+index 0000000..48aadbf
+--- /dev/null
++++ b/node_modules/@emotion/core/macro.d.ts
+@@ -0,0 +1,5 @@
++declare module '@emotion/core/macro' {
++    import {keyframes} from '@emotion/core'
++    export * from '@emotion/core'
++    export default {keyframes}
++}
+\ No newline at end of file
+diff --git a/node_modules/@emotion/core/macro.js b/node_modules/@emotion/core/macro.js
+new file mode 100644
+index 0000000..23d2cb2
+--- /dev/null
++++ b/node_modules/@emotion/core/macro.js
+@@ -0,0 +1 @@
++module.exports = require('babel-plugin-emotion').macros.createEmotionMacro('@emotion/core')
